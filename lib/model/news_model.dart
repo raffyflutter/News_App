@@ -9,16 +9,16 @@ class NewsModel {
     if (json['articles'] != null) {
       articles = <Articles>[];
       json['articles'].forEach((v) {
-        articles!.add(new Articles.fromJson(v));
+        articles!.add(Articles.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['totalArticles'] = this.totalArticles;
-    if (this.articles != null) {
-      data['articles'] = this.articles!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['totalArticles'] = totalArticles;
+    if (articles != null) {
+      data['articles'] = articles!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -55,22 +55,21 @@ class Articles {
     image = json['image'];
     publishedAt = json['publishedAt'];
     author = json['author'];
-    source =
-        json['source'] != null ? new Source.fromJson(json['source']) : null;
+    source = json['source'] != null ? Source.fromJson(json['source']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['title'] = this.title;
-    data['description'] = this.description;
-    data['content'] = this.content;
-    data['url'] = this.url;
-    data['image'] = this.image;
-    data['urlToImage'] = this.urlToimage;
-    data['author'] = this.author;
-    data['publishedAt'] = this.publishedAt;
-    if (this.source != null) {
-      data['source'] = this.source!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['title'] = title;
+    data['description'] = description;
+    data['content'] = content;
+    data['url'] = url;
+    data['image'] = image;
+    data['urlToImage'] = urlToimage;
+    data['author'] = author;
+    data['publishedAt'] = publishedAt;
+    if (source != null) {
+      data['source'] = source!.toJson();
     }
     return data;
   }
@@ -88,9 +87,9 @@ class Source {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['url'] = this.url;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['url'] = url;
     return data;
   }
 }

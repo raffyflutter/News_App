@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:news_app/views/splash_screen.dart';
 
-import '../views/home_screen.dart';
+import '../views/homes_screen.dart';
 
 class Routes {
   static const String home = '/';
@@ -15,7 +15,9 @@ class Routes {
 
 class AppPages {
   static final List<GetPage> pages = [
-    GetPage(name: Routes.home, page: () => HomeScreen()),
+    GetPage(name: Routes.home, page: () => HomesScreen()),
+    // GetPage(name: Routes.home, page: () => HomeScreen()),
+
     GetPage(name: Routes.splashScreen, page: () => SplashScreen()),
     // GetPage(name: Routes.services, page: () => OurservicesScreen()),
     // GetPage(name: Routes.ai_learning, page: () => AIMLScreen()),
