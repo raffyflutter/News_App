@@ -6,6 +6,7 @@ import '../views/homes_screen.dart';
 class Routes {
   static const String home = '/';
   static const String splashScreen = '/splashScreen';
+  static const String categoryScreen = '/splashScreen';
 }
 
 class AppPages {

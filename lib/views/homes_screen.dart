@@ -11,6 +11,7 @@ import 'package:intl/intl.dart';
 import 'package:news_app/controller/categoriesNews.dart';
 import 'package:news_app/controller/new_view_model_controller.dart';
 import 'package:news_app/repository/news_repository.dart';
+import 'package:news_app/routes/routes.dart';
 import 'package:news_app/views/category_news.dart';
 import '../constant/pakistan_news_channel.dart';
 
@@ -56,11 +57,12 @@ class _HomesScreenState extends State<HomesScreen> {
             backgroundColor: Colors.white,
             leading: IconButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return CategoriesTabScreen();
-                    },
-                  ));
+                  // Navigator.push(context, MaterialPageRoute(
+                  //   builder: (context) {
+                  //     return CategoriesTabScreen();
+                  //   },
+                  // ));
+                  Get.toNamed(Routes.categoryScreen);
                 },
                 icon: Icon(Icons.category_outlined)),
             automaticallyImplyLeading: false,
