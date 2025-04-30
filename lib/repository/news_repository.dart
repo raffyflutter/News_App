@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_brace_in_string_interps
+// ignore_for_file: unnecessary_brace_in_string_interps, avoid_print
 
 import 'dart:convert';
 
@@ -58,14 +58,10 @@ class NewsRepository {
 
   Future<NewsCategorayModel?> fetchNewsCategory(String category) async {
     isLoading.value = true;
-    // var selectedValue = channel?.displayName ?? 'BOL';
     try {
-      // final url =
-      //     'https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=pk&max=10&apikey=97749c5f081ff37c79143cf5b47d870f';
       final url =
-          'https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=68ab3d58ae054506b01bc5579ca33af2';
+          'https://gnews.io/api/v4/top-headlines?topic=$category&country=pk&lang=en&max=20&apikey=97749c5f081ff37c79143cf5b47d870f';
       final response = await http.get(Uri.parse(url));
-
       if (response.statusCode == 200) {
         final data = NewsCategorayModel.fromJson(jsonDecode(response.body));
         return data;

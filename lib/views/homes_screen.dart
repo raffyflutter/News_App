@@ -113,7 +113,7 @@ class _HomesScreenState extends State<HomesScreen> {
                               fontSize: 16, fontWeight: FontWeight.w400)),
                     ),
                     SizedBox(
-                      height: 280.h,
+                      height: ScreenUtil().screenWidth < 500 ? 285.h : 280.h,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: newsRepository.countryArticles.length,
@@ -223,7 +223,7 @@ class _HomesScreenState extends State<HomesScreen> {
                 article.title ?? '',
                 style: GoogleFonts.poppins(
                   color: Colors.black,
-                  fontSize: 14.sp,
+                  fontSize: 15.r,
                 ),
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
@@ -235,11 +235,11 @@ class _HomesScreenState extends State<HomesScreen> {
                 children: [
                   Text('By: ${article.source?.name ?? 'Unknown'}',
                       style: GoogleFonts.poppins(
-                          fontSize: 12.sp, color: Colors.black54)),
+                          fontSize: 11.r, color: Colors.black54)),
                   Text(
                       'Published: ${DateFormat('yyyy-MM-dd').format(DateTime.parse(article.publishedAt ?? DateTime.now().toString()))}',
                       style: GoogleFonts.poppins(
-                          fontSize: 10.sp, color: Colors.black45)),
+                          fontSize: 11.r, color: Colors.black45)),
                 ],
               ),
               SizedBox(
