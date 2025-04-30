@@ -68,7 +68,8 @@ class _CategoriesTabScreenState extends State<CategoriesTabScreen>
           splashFactory: InkRipple.splashFactory,
           overlayColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
-              if (states.contains(MaterialState.pressed)) return Colors.white;
+              if (states.contains(MaterialState.pressed))
+                return Colors.transparent;
               return null; // default behavior
             },
           ),
